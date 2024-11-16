@@ -66,12 +66,12 @@ public class Episodio {
         this.titulo = d.titulo() ;
         this.numeroEpisodio = d.numeroEpisodio() ;
         try {
-        this.evaluacion = Double.valueOf(d.evaluacion()) ;
+            this.evaluacion = Double.valueOf(d.evaluacion()) ;
         } catch (NumberFormatException e) {
             this.evaluacion = 0.0 ;
         }
         try{
-        this.fechaDeLanzamiento = LocalDate.parse(d.fechaDeLanzamiento()) ;
+            this.fechaDeLanzamiento = LocalDate.parse(d.fechaDeLanzamiento()) ;
         }catch (DateTimeParseException e){
             this.fechaDeLanzamiento = null ;
         }
