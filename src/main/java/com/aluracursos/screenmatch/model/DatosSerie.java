@@ -16,7 +16,7 @@ public record DatosSerie(
         @JsonAlias("Plot")
         String sinopsis ,
         @JsonAlias("Actors")
-        String Actores ,
+        String actores ,
         @JsonAlias("Poster")
         String poster ,
         @JsonAlias("Year")

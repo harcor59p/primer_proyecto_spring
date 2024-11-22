@@ -7,9 +7,17 @@ public enum Categoria {
     DRAMA ("Drama"),
     CRIMEN ("Crime");
 
-    private String CategoriaOmdb ;
+    private String categoriaOmdb;
+    Categoria (String categoriaOmdb){
+        this.categoriaOmdb = categoriaOmdb;
+    }
 
-    Categoria(String categoriaOmdb){
-        this.CategoriaOmdb = categoriaOmdb ;
+    public static Categoria fromString(String text) {
+        for (Categoria categoria : Categoria.values()) {
+            if (categoria.categoriaOmdb.equalsIgnoreCase(text)) {
+                return categoria;
+            }
+        }
+        throw new IllegalArgumentException("Ninguna categoria encontrada: " + text);
     }
 }
