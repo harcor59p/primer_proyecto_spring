@@ -44,7 +44,7 @@ public class Principal {
                 case 3:
                     mostrarSeriesBuscadas();
                 case 0:
-                    System.out.println("Cerrando la aplñicación...");
+                    System.out.println("Cerrando la aplicación...");
                     break;
                 default:
                     System.out.println("Opción invalida");

@@ -1,14 +1,23 @@
 package com.aluracursos.screenmatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.OptionalDouble;
 
-public class Serie {
+@Entity
+@Table(name = "series")
 
+public class Serie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id ;
+    @Column(unique = true)
     private String titulo ;
     private Integer totalDeTemporadas ;
     private Double evaluacion ;
+    @Enumerated(EnumType.STRING)
     private Categoria genero ;
     private String sinopsis ;
     private String actores ;
@@ -16,6 +25,8 @@ public class Serie {
     private String aniosEmision ;
     private String fechaEmisionPrimerCapitulo ;
     private String escritores ;
+    @Transient
+    private List<Episodio> episodios ;
 
     public Serie(DatosSerie datosSerie){
         this.titulo = datosSerie.titulo();
@@ -27,6 +38,13 @@ public class Serie {
         this.sinopsis = datosSerie.sinopsis() ;
     }
 
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
 
     public String getTitulo() {
         return titulo;
